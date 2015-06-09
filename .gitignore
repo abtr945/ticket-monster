@@ -10,9 +10,9 @@ bin
 /helloworld-jsp
 CONTRIBUTING.html
 .errai
-demo/src/main/gwt-unitCache
-demo/src/main/webapp/BookingMonitor
-demo/src/main/webapp/WEB-INF/deploy
+src/main/gwt-unitCache
+src/main/webapp/BookingMonitor
+src/main/webapp/WEB-INF/deploy
 out
 .idea
 *.ipr
