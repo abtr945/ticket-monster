@@ -21,7 +21,6 @@ out
 atlassian-ide-plugin.xml
 .classpath
 .project
-.settings
 .metadata
 bin
 .nbattrs
