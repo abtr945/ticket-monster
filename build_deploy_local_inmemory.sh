@@ -9,7 +9,7 @@
 #
 
 echo 'Build ticket-monster maven project with in-memory database settings...'
-mvn clean package
+sudo mvn clean package
 
 echo 'Build Docker image for deploying ticket-monster on Wildfly application server...'
 sudo docker build -f dockerfiles/inmemory/Dockerfile -t ticket-monster-inmemory .

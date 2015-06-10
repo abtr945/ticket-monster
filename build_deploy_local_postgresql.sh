@@ -14,7 +14,7 @@
 #
 
 echo 'Build ticket-monster maven project with PostgreSQL database settings...'
-mvn clean package -Ppostgresql
+sudo mvn clean package -Ppostgresql
 
 echo 'Build Docker image for PostgreSQL database server, with sample TicketMonster database pre-loaded...'
 sudo docker build -f dockerfiles/postgresql/db/Dockerfile -t ticket-monster-postgresql-db .

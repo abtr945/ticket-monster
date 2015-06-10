@@ -19,14 +19,6 @@
             }
          },
          "spec":{
-            "volumes": [
-               {
-                  "name": "pgdata",
-                  "hostPath": {
-                     "path": "/var/lib/postgresql/data"
-                  }
-               }
-            ],
             "containers":[
                {
                   "image":"ticket-monster-postgresql-db",
@@ -46,12 +38,6 @@
                      {
                         "name": "POSTGRES_PASSWORD",
                         "value": "ticketmonster-docker"
-                     }
-                  ],
-                  "volumeMounts": [
-                     {
-                        "name": "pgdata",
-                        "mountPath": "/var/lib/postgresql/data"
                      }
                   ]
                }

@@ -11,11 +11,13 @@
       "createExternalLoadBalancer": true,
       "ports": [
          {
+           "name":"app-server-port",
            "port":8080,
            "targetPort":"app-server",
            "protocol":"TCP"
          },
          {
+           "name":"admin-server-port",
            "port":9990,
            "targetPort":"admin-server",
            "protocol":"TCP"
