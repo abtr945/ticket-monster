@@ -36,7 +36,7 @@ echo 'Press Ctrl-C to terminate the container. The app will be available at http
 sudo docker run -it --link db:db -p 8080:8080 ticket-monster-postgresql-appserver
 
 echo ''
-echo 'Application terminated. If you no longer want the database container, please terminate it using the following Docker commands:'
+echo 'Application server terminated. If you no longer want the database container, please terminate it using the following Docker commands:'
 echo ''
 echo 'sudo docker stop db'
 echo 'sudo docker rm db'
