@@ -1,0 +1,22 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"db",
+      "labels":{
+         "name":"db"
+      }
+   },
+   "spec":{
+      "ports": [
+         {
+           "port":5432,
+           "targetPort":"db-server",
+           "protocol":"TCP"
+         }
+      ],
+      "selector":{
+         "name":"db"
+      }
+   }
+}

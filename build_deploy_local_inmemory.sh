@@ -1,6 +1,10 @@
+#!/bin/bash
+
 #
 # - Build the ticket-monster maven project, and set it to use in-memory database backend (H2).
+#
 # - Build a Docker Image for deploying ticket-monster on a single Wildfly application server container.
+#
 # - Run a local Docker container for hosting the app locally.
 #
 

@@ -1,0 +1,28 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"appserver",
+      "labels":{
+         "name":"appserver"
+      }
+   },
+   "spec":{
+      "createExternalLoadBalancer": true,
+      "ports": [
+         {
+           "port":8080,
+           "targetPort":"app-server",
+           "protocol":"TCP"
+         },
+         {
+           "port":9990,
+           "targetPort":"admin-server",
+           "protocol":"TCP"
+         }
+      ],
+      "selector":{
+         "name":"appserver"
+      }
+   }
+}

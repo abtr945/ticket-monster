@@ -1,0 +1,62 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"db",
+      "labels":{
+         "name":"db"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"db"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"db"
+            }
+         },
+         "spec":{
+            "volumes": [
+               {
+                  "name": "pgdata",
+                  "hostPath": {
+                     "path": "/var/lib/postgresql/data"
+                  }
+               }
+            ],
+            "containers":[
+               {
+                  "image":"ticket-monster-postgresql-db",
+                  "name":"db",
+                  "ports":[
+                     {
+                        "name":"db-server",
+                        "containerPort":5432,
+                        "protocol":"TCP"
+                     }
+                  ],
+                  "env": [
+                     {
+                        "name": "POSTGRES_USER",
+                        "value": "ticketmonster"
+                     },
+                     {
+                        "name": "POSTGRES_PASSWORD",
+                        "value": "ticketmonster-docker"
+                     }
+                  ],
+                  "volumeMounts": [
+                     {
+                        "name": "pgdata",
+                        "mountPath": "/var/lib/postgresql/data"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

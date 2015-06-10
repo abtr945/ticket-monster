@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # - Build the ticket-monster maven project, and set it to use PostgreSQL database backend.
 #

@@ -1,0 +1,48 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1beta3",
+   "metadata":{
+      "name":"appserver",
+      "labels":{
+         "name":"appserver"
+      }
+   },
+   "spec":{
+      "replicas":3,
+      "selector":{
+         "name":"appserver"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"appserver"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "image":"ticket-monster-postgresql-appserver",
+                  "name":"appserver",
+                  "ports":[
+                     {
+                        "name":"app-server",
+                        "containerPort":8080,
+                        "protocol":"TCP"
+                     },
+                     {
+                        "name":"admin-server",
+                        "containerPort":9990,
+                        "protocol":"TCP"
+                     }
+                  ],
+                  "command": [
+                        "sh",
+                        "-c",
+                        "/opt/jboss/wildfly/bin/standalone.sh -b `hostname --ip-address` -Dpostgres.host=$DB_SERVICE_HOST"
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
