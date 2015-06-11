@@ -21,17 +21,12 @@
          "spec":{
             "containers":[
                {
-                  "image":"ticket-monster-postgresql-appserver",
+                  "image":"gcr.io/<PROJECT_ID>/ticket-monster-postgresql-appserver",
                   "name":"appserver",
                   "ports":[
                      {
                         "name":"app-server",
                         "containerPort":8080,
-                        "protocol":"TCP"
-                     },
-                     {
-                        "name":"admin-server",
-                        "containerPort":9990,
                         "protocol":"TCP"
                      }
                   ],

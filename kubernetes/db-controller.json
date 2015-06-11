@@ -21,7 +21,7 @@
          "spec":{
             "containers":[
                {
-                  "image":"ticket-monster-postgresql-db",
+                  "image":"gcr.io/<PROJECT_ID>/ticket-monster-postgresql-db",
                   "name":"db",
                   "ports":[
                      {
